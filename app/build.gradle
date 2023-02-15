@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 33
@@ -40,4 +41,5 @@ dependencies {
     implementation "com.google.android.gms:play-services-location:18.0.0"
     implementation "com.github.fornewid:neumorphism:0.3.0"
     implementation ("androidx.multidex:multidex:2.0.1")
+    implementation 'com.github.anastr:speedviewlib:1.6.0'
 }

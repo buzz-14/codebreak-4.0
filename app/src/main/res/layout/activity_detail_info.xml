@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#E3DDDD"
     tools:context=".DetailInfo">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,9 +15,8 @@
         <soup.neumorphism.NeumorphCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingRight="15dp"
             android:paddingLeft="15dp"
-            >
+            android:paddingRight="15dp">
 
             <TextView
                 android:id="@+id/t5"
@@ -32,23 +32,72 @@
                 android:textSize="35dp" />
         </soup.neumorphism.NeumorphCardView>
 
+        <com.github.anastr.speedviewlib.AwesomeSpeedometer
+            android:id="@+id/awesomeSpeedometer"
+            sv_indicatorLightColor="#BB141480"
+            app:sv_speedometerColor="#E3DDDD"
+            app:sv_backgroundCircleColor="#C3BFBF"
+            app:sv_speedTextColor="#040404"
+            app:sv_textColor="#000"
+            app:sv_indicatorColor="#FF0000"
+            app:sv_markColor="@color/black"
+            sv_withIndicatorLight="true"
+            app:sv_trianglesColor="@color/black"
+            app:sv_indicatorLightColor="@color/black"
+            app:sv_trembleDegree="1"
+            app:sv_withTremble="false"
+            app:sv_unitTextColor="@color/black"
+            app:sv_textRightToLeft="true"
+            app:sv_tickRotation="true"
+            app:sv_tickPadding="5dp"
+            app:sv_tickTextFormat="FLOAT"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            app:sv_endDegree="360"
+            app:sv_speedometerMode="TOP"
+            app:sv_unit="strength"
+            app:sv_startDegree="180"
+            app:sv_tickNumber="6" />
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="290dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
 
+           >
 
+            <TextView
+                android:id="@+id/t14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:gravity="center"
+                android:padding="14dp"
+                android:paddingEnd="10dp"
+                android:text="Distance : "
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+               />
+        </soup.neumorphism.NeumorphCardView>
 
         <soup.neumorphism.NeumorphCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingRight="15dp"
-            android:layout_marginTop="400dp"
             android:layout_gravity="center"
+            android:layout_marginTop="80dp"
             android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+
             >
+
             <GridLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:rowCount="4"
                 android:orientation="horizontal"
-                android:layout_height="wrap_content">
+                android:rowCount="4">
+
                 <TextView
                     android:id="@+id/t6"
                     android:layout_width="200dp"
@@ -59,8 +108,8 @@
                     android:paddingEnd="10dp"
                     android:text="Hello"
                     android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_color"
-                     />
+                    android:textColorHint="@color/text_color" />
+
                 <TextView
                     android:id="@+id/t7"
                     android:layout_width="200dp"
@@ -71,8 +120,8 @@
                     android:paddingEnd="10dp"
                     android:text="Hello"
                     android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_color"
-                    />
+                    android:textColorHint="@color/text_color" />
+
                 <TextView
                     android:id="@+id/t8"
                     android:layout_width="200dp"
@@ -83,8 +132,8 @@
                     android:paddingEnd="10dp"
                     android:text="Hello"
                     android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_color"
-                    />
+                    android:textColorHint="@color/text_color" />
+
                 <TextView
                     android:id="@+id/t9"
                     android:layout_width="200dp"
@@ -95,8 +144,8 @@
                     android:paddingEnd="10dp"
                     android:text="Hello"
                     android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_color"
-                    />
+                    android:textColorHint="@color/text_color" />
+
                 <TextView
                     android:id="@+id/t10"
                     android:layout_width="200dp"
@@ -107,8 +156,8 @@
                     android:paddingEnd="10dp"
                     android:text="Hello"
                     android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_color"
-                    />
+                    android:textColorHint="@color/text_color" />
+
                 <TextView
                     android:id="@+id/t11"
                     android:layout_width="200dp"
@@ -119,8 +168,8 @@
                     android:paddingEnd="10dp"
                     android:text="Hello"
                     android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_color"
-                    />
+                    android:textColorHint="@color/text_color" />
+
                 <TextView
                     android:id="@+id/t12"
                     android:layout_width="200dp"
@@ -131,8 +180,8 @@
                     android:paddingEnd="10dp"
                     android:text="Hello"
                     android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_color"
-                    />
+                    android:textColorHint="@color/text_color" />
+
                 <TextView
                     android:id="@+id/t13"
                     android:layout_width="200dp"
@@ -143,14 +192,13 @@
                     android:paddingEnd="10dp"
                     android:text="Hello"
                     android:textColor="@color/text_color"
-                    android:textColorHint="@color/text_color"
-                    />
+                    android:textColorHint="@color/text_color" />
 
             </GridLayout>
 
         </soup.neumorphism.NeumorphCardView>
 
-        </LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>
