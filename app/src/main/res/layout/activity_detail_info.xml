@@ -10,7 +10,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:fontFamily="@font/ubuntulight">
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:autofillHints=""
+            android:layout_marginTop="50dp"
+            android:padding="5dp"
+            android:paddingEnd="10dp"
+            android:text="Connected to : "
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"
+            android:textSize="18dp" />
 
         <soup.neumorphism.NeumorphCardView
             android:layout_width="match_parent"
@@ -29,20 +44,32 @@
                 android:text="Hello"
                 android:textColor="@color/text_color"
                 android:textColorHint="@color/text_color"
-                android:textSize="35dp" />
+                android:fontFamily="@font/ubuntumedium"
+                android:textSize="30dp" />
         </soup.neumorphism.NeumorphCardView>
 
+        <TextView
+            android:id="@+id/text_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="90dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"
+            android:textSize="13dp" />
         <com.github.anastr.speedviewlib.AwesomeSpeedometer
             android:id="@+id/awesomeSpeedometer"
-            sv_indicatorLightColor="#BB141480"
+            sv_indicatorLightColor="#BB2222AE"
             app:sv_speedometerColor="#E3DDDD"
-            app:sv_backgroundCircleColor="#C3BFBF"
+            app:sv_backgroundCircleColor="#D6D3D3"
             app:sv_speedTextColor="#040404"
-            app:sv_textColor="#000"
-            app:sv_indicatorColor="#FF0000"
-            app:sv_markColor="@color/black"
+            app:sv_textColor="#D81B60"
+            app:sv_indicatorColor="#E53935"
+            app:sv_markColor="#000000"
             sv_withIndicatorLight="true"
-            app:sv_trianglesColor="@color/black"
+            app:sv_trianglesColor="#408EB5"
             app:sv_indicatorLightColor="@color/black"
             app:sv_trembleDegree="1"
             app:sv_withTremble="false"
@@ -54,10 +81,10 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="10dp"
             app:sv_endDegree="360"
             app:sv_speedometerMode="TOP"
-            app:sv_unit="strength"
+            app:sv_unit="Signal Strength"
             app:sv_startDegree="180"
             app:sv_tickNumber="6" />
         <soup.neumorphism.NeumorphCardView
@@ -76,6 +103,7 @@
                 android:padding="14dp"
                 android:paddingEnd="10dp"
                 android:text="Distance : "
+                android:fontFamily="@font/ubuntumedium"
                 android:textColor="@color/text_color"
                 android:textColorHint="@color/text_color"
                />
@@ -85,7 +113,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="100dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
 
@@ -107,6 +135,7 @@
                     android:padding="14dp"
                     android:paddingEnd="10dp"
                     android:text="Hello"
+                    android:fontFamily="@font/ubuntumedium"
                     android:textColor="@color/text_color"
                     android:textColorHint="@color/text_color" />
 
@@ -119,6 +148,7 @@
                     android:padding="14dp"
                     android:paddingEnd="10dp"
                     android:text="Hello"
+                    android:fontFamily="@font/ubuntumedium"
                     android:textColor="@color/text_color"
                     android:textColorHint="@color/text_color" />
 
@@ -131,6 +161,7 @@
                     android:padding="14dp"
                     android:paddingEnd="10dp"
                     android:text="Hello"
+                    android:fontFamily="@font/ubuntumedium"
                     android:textColor="@color/text_color"
                     android:textColorHint="@color/text_color" />
 
@@ -143,6 +174,7 @@
                     android:padding="14dp"
                     android:paddingEnd="10dp"
                     android:text="Hello"
+                    android:fontFamily="@font/ubuntumedium"
                     android:textColor="@color/text_color"
                     android:textColorHint="@color/text_color" />
 
@@ -155,6 +187,7 @@
                     android:padding="14dp"
                     android:paddingEnd="10dp"
                     android:text="Hello"
+                    android:fontFamily="@font/ubuntumedium"
                     android:textColor="@color/text_color"
                     android:textColorHint="@color/text_color" />
 
@@ -167,6 +200,7 @@
                     android:padding="14dp"
                     android:paddingEnd="10dp"
                     android:text="Hello"
+                    android:fontFamily="@font/ubuntumedium"
                     android:textColor="@color/text_color"
                     android:textColorHint="@color/text_color" />
 
@@ -179,6 +213,7 @@
                     android:padding="14dp"
                     android:paddingEnd="10dp"
                     android:text="Hello"
+                    android:fontFamily="@font/ubuntumedium"
                     android:textColor="@color/text_color"
                     android:textColorHint="@color/text_color" />
 
@@ -191,6 +226,7 @@
                     android:padding="14dp"
                     android:paddingEnd="10dp"
                     android:text="Hello"
+                    android:fontFamily="@font/ubuntumedium"
                     android:textColor="@color/text_color"
                     android:textColorHint="@color/text_color" />
 

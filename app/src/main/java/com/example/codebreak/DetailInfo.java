@@ -9,13 +9,14 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.anastr.speedviewlib.AwesomeSpeedometer;
 
 public class DetailInfo extends AppCompatActivity {
-    TextView textView,text_ip,text_frequency,text_channel,text_rssi,text_mac,text_bssid,text_linkspeed,text_netid,distance;
+    TextView textView,text_ip,text_frequency,text_channel,text_rssi,text_mac,text_bssid,text_linkspeed,text_netid,distance,text_indicator;
     WifiManager wifiManager;
     AwesomeSpeedometer awesomeSpeedometer;
     Handler handler = new Handler();
@@ -34,11 +35,14 @@ public class DetailInfo extends AppCompatActivity {
         text_linkspeed=findViewById(R.id.t12);
         text_netid=findViewById(R.id.t13);
         distance=findViewById(R.id.t14);
-
+        text_indicator=findViewById(R.id.text_indicator);
         awesomeSpeedometer=findViewById(R.id.awesomeSpeedometer);
         awesomeSpeedometer.setSpeedAt(5);
 
-
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        );
 
         handler.post(runnableCode);
     }
@@ -95,11 +99,13 @@ public class DetailInfo extends AppCompatActivity {
         text_netid.setText("Network ID: "+netid);
 
         int referenceRssi = -40;
-        double distance_val = Math.pow(10, (referenceRssi - rssi) / (10 * 2.0));
+        float distance_val = (float) Math.pow(10, (referenceRssi - rssi) / (10 * 2.0));
         distance.setText("Distance : "+distance_val+"m");
         int signal_Strength = rssi+120;
         awesomeSpeedometer.speedTo(signal_Strength);
-
+        if(signal_Strength > 60) text_indicator.setText("STRONG CONNECTION!");
+        else if(signal_Strength > 40 && signal_Strength<60) text_indicator.setText("AVERAGE CONNECTION!");
+        else text_indicator.setText("WEAK CONNECTION! (please move closer)");
     }
 
     private Runnable runnableCode = new Runnable() {
@@ -107,7 +113,7 @@ public class DetailInfo extends AppCompatActivity {
         @Override
         public void run() {
             getInfo();
-            handler.postDelayed(this, 500);
+            handler.postDelayed(this, 2000);
         }
     };
 }

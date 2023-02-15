@@ -1,9 +1,11 @@
 package com.example.codebreak;
 
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,9 +17,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.format.Formatter;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.Manifest;
 
 import soup.neumorphism.NeumorphImageButton;
 
@@ -25,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     NeumorphImageButton btn;
     TextView tv2,tv3;
     WifiManager wifiManager;
-
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
@@ -36,8 +40,26 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.b1);
         tv2 = findViewById(R.id.t3);
         wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        );
+
+
         getInfo();
 
+        if (ContextCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)){
+                ActivityCompat.requestPermissions(MainActivity.this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            }else{
+                ActivityCompat.requestPermissions(MainActivity.this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            }
+        }
 
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -81,8 +103,25 @@ public class MainActivity extends AppCompatActivity {
                         "ssid: "+ssid+"\n"+
                         "frequency: "+frequency;*/
         /*tv1.setText(info);*/
-        String ssid1 = ""+ssid;
-        tv2.setText(ssid1);
 
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case 1: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    if (ContextCompat.checkSelfPermission(MainActivity.this,
+                            Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+        }
     }
 }
