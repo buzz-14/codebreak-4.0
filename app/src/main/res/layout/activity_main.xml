@@ -6,28 +6,87 @@
     android:layout_height="match_parent"
     android:background="#E3DDDD"
     tools:context=".MainActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
 
-    <soup.neumorphism.NeumorphButton
-        android:layout_width="200dp"
-        android:textSize="16dp"
-        android:id="@+id/b1"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="click"
-        android:textColor="@color/text_color"
-        style="@style/Widget.Neumorph.Button">
-    </soup.neumorphism.NeumorphButton>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/t1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:autofillHints=""
+            android:padding="14dp"
+            android:paddingEnd="10dp"
+            android:text="Connected to"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"
+            android:textSize="18dp" />
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            >
+
+            <TextView
+                android:id="@+id/t3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:gravity="center"
+                android:padding="14dp"
+                android:paddingEnd="10dp"
+                android:text="Hello"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                android:textSize="35dp" />
+        </soup.neumorphism.NeumorphCardView>
+
+
+        <soup.neumorphism.NeumorphImageButton
+            android:id="@+id/b1"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/roundedbutton"
+            android:src="@drawable/poweron"
+            android:textColor="@color/text_color"
+            android:layout_marginTop="120dp"
+            android:textSize="16dp"
+            app:neumorph_shadowElevation="6dp"
+            app:neumorph_shapeType="flat">
+
+
+        </soup.neumorphism.NeumorphImageButton>
+
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="120dp"
+            >
+
+            <TextView
+                android:id="@+id/t4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:gravity="center"
+                android:padding="14dp"
+                android:paddingEnd="10dp"
+                android:text="Keep Phone Near the Appliance To Test The Signal Strength At The Location"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                android:textSize="30dp" />
+        </soup.neumorphism.NeumorphCardView>
+    </LinearLayout>
 
 
 </RelativeLayout>

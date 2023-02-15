@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.wifi.SupplicantState;
 import android.net.wifi.WifiInfo;
@@ -18,20 +19,25 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import soup.neumorphism.NeumorphImageButton;
+
 public class MainActivity extends AppCompatActivity {
-    Button btn;
-    TextView tv1;
+    NeumorphImageButton btn;
+    TextView tv2,tv3;
     WifiManager wifiManager;
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn = findViewById(R.id.b1);
-        tv1 = findViewById(R.id.t1);
+        tv2 = findViewById(R.id.t3);
         wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
+        getInfo();
+
 
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -39,22 +45,23 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.Q)
             @Override
             public void onClick(View v) {
-                 getInfo(v);
+                Intent i =new Intent(getApplicationContext(),DetailInfo.class);
+                startActivity(i);
             }
         });
     }
 
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
-    public void getInfo(View view) {
+    public void getInfo() {
         String ssid="";
         wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
         WifiInfo wifiInfo = wifiManager.getConnectionInfo();
         if (wifiInfo.getSupplicantState() == SupplicantState.COMPLETED) {
              ssid = wifiInfo.getSSID();
-            Toast.makeText(this, ""+ssid, Toast.LENGTH_SHORT).show();
+
         }
-        int ip = wifiInfo.getIpAddress();
+       /* int ip = wifiInfo.getIpAddress();
         String bssid = wifiInfo.getBSSID();
         String mac = wifiInfo.getMacAddress();
         int rssi = wifiInfo.getRssi();
@@ -72,8 +79,10 @@ public class MainActivity extends AppCompatActivity {
                         "rssi: "+rssi+"\n"+
                         "linkspeed: "+linkspeed+"\n"+
                         "ssid: "+ssid+"\n"+
-                        "frequency: "+frequency;
-        tv1.setText(info);
+                        "frequency: "+frequency;*/
+        /*tv1.setText(info);*/
+        String ssid1 = ""+ssid;
+        tv2.setText(ssid1);
 
     }
 }
