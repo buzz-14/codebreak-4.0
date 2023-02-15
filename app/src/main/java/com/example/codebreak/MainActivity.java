@@ -1,5 +1,6 @@
 package com.example.codebreak;
 
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -22,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tv1;
     WifiManager wifiManager;
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +35,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         btn.setOnClickListener(new View.OnClickListener() {
+
+            @RequiresApi(api = Build.VERSION_CODES.Q)
             @Override
             public void onClick(View v) {
-                getInfo(v);
+                 getInfo(v);
             }
         });
     }
 
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     public void getInfo(View view) {
         String ssid="";
         wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
@@ -50,10 +56,23 @@ public class MainActivity extends AppCompatActivity {
         }
         int ip = wifiInfo.getIpAddress();
         String bssid = wifiInfo.getBSSID();
+        String mac = wifiInfo.getMacAddress();
         int rssi = wifiInfo.getRssi();
+        int netid = wifiInfo.getNetworkId();
         int linkspeed = wifiInfo.getLinkSpeed();
         int frequency = wifiInfo.getFrequency();
-        String info = "ipAddress: " + ip + "\n" + "bssid: " + bssid +"\n"+"rssi: "+rssi+"\n"+"linkspeed: "+linkspeed+"\n"+"ssid: "+ssid+"\n"+"frequency: "+frequency;
+        int txLinkSpeed = wifiInfo.getTxLinkSpeedMbps();
+        int rxLinkSpeed = wifiInfo.getRxLinkSpeedMbps();
+        String info = "ipAddress: " + ip + "\n" +
+                        "bssid: " + bssid +  "\n"+
+                        "mac: " + mac +  "\n"+
+                        "netID: " + netid +  "\n"+
+                        "txLinkSpeed: " + txLinkSpeed +  "\n"+
+                        "rxLinkSpeed: " + rxLinkSpeed +  "\n"+
+                        "rssi: "+rssi+"\n"+
+                        "linkspeed: "+linkspeed+"\n"+
+                        "ssid: "+ssid+"\n"+
+                        "frequency: "+frequency;
         tv1.setText(info);
 
     }
