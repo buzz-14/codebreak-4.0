@@ -19,5 +19,5 @@ A Simple but Powerfull tool to Assesses Wifi signals making installation of Smar
 - Realtime update of status every 2 seconds!
 
 ## 🖼️ User interface
-<img src="/images/macbook-pro-space-gray-on-the-wooden-table.jpg" width="50%"><img src="/images/walking-with-iphone-x.jpg" width="50%">
-![Screenshot_20230216_083945_CodeBreak](https://user-images.githubusercontent.com/62198148/219260282-12cf2fd6-2a1b-4a75-836a-4b0b53b50285.jpg)
+![image](https://user-images.githubusercontent.com/62198148/219260738-12f49813-e7c6-48eb-bc5a-f668585c6ab4.png)
+
