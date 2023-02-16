@@ -21,3 +21,4 @@ A Simple but Powerfull tool to Assesses Wifi signals making installation of Smar
 ## 🖼️ User interface
 ![image](https://user-images.githubusercontent.com/62198148/219260738-12f49813-e7c6-48eb-bc5a-f668585c6ab4.png)
 
+For ease of Install and access the Final APK is provided in the strawhats_codebreak/NetworkIndices.apk !
